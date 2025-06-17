@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0，maximum-scale=1.0, user-scalable=no">
+  <title>昆仑铁艺护栏 - 专业护栏解决方案提供商</title>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <style type="text/tailwindcss">
+    @theme {
+      --color-primary: #1e40af;
+      --color-secondary: #3b82f6;
+      --color-accent: #f59e0b;
+      --font-inter: 'Inter', sans-serif;
+    }
+
+    @utility smooth-scroll {
+      scroll-behavior: smooth;
+    }
+
+    @utility card-hover {
+      @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+    }
+
+    @utility section-padding {
+      @apply py-16 md:py-24;
+    }
+
+    @utility contact-btn {
+      @apply bg-accent hover:bg-accent/90 text-white font-bold py-4 px-8 rounded-full transition card-hover text-lg flex items-center justify-center;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px;
+      height: 80px;
+      background: rgba(255,255,255,0.8);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .play-button:hover {
+      width: 90px;
+      height: 90px;
+      background: rgba(245,158,11,0.9);
+    }
+    .play-button i {
+      font-size: 30px;
+      color: var(--color-primary);
+    }
+  </style>
+</head>
+<body class="font-inter smooth-scroll bg-gray-50 text-gray-800">
+<!-- 导航栏 -->
+<nav class="bg-primary text-white sticky top-0 z-50 shadow-md">
+  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <a href="#" class="text-2xl font-bold">昆仑铁艺护栏</a>
+    <div class="hidden md:flex space-x-8">
+      <a href="#products" class="hover:text-accent transition">产品中心</a>
+      <a href="#about" class="hover:text-accent transition">关于我们</a>
+      <a href="#contact" class="hover:text-accent transition">联系咨询</a>
+    </div>
+    <button class="md:hidden text-2xl" id="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+  <!-- 移动端菜单 -->
+  <div class="md:hidden hidden bg-primary-dark px-4 py-2" id="mobile-menu">
+    <a href="#products" class="block py-2 hover:text-accent transition">产品中心</a>
+    <a href="#about" class="block py-2 hover:text-accent transition">关于我们</a>
+    <a href="#contact" class="block py-2 hover:text-accent transition">联系咨询</a>
+  </div>
+</nav>
+
+<!-- 顶部固定咨询按钮 - 仅移动端显示 -->
+<div class="fixed bottom-4 left-4 right-4 md:hidden z-40">
+  <a href="tel:15835870592" class="contact-btn">
+    <i class="fas fa-phone-alt mr-2"></i> 立即拨打电话咨询
+  </a>
+</div>
+
+<!-- 首页轮播图 -->
+<section class="relative w-full bg-gray-200">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <!-- 轮播图1 -->
+      <div class="swiper-slide" style="background-image: url('banner/banner1.jpg');">
+        <div class="container mx-auto h-[60vh] min-h-[400px] flex items-center">
+          <div class="absolute inset-0 bg-black/40 z-10"></div>
+          <div class="container mx-auto px-4 z-20">
+            <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-4 text-white">锌钢护栏解决方案</h1>
+            <p class="text-lg md:text-xl mb-8 text-white">高强度锌钢合金，耐腐蚀抗冲击，适用于小区、别墅安全防护</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="tel:15835870592" class="contact-btn">
+                <i class="fas fa-phone-alt mr-2"></i> 立即咨询
+              </a>
+              <a href="#contact" class="contact-btn bg-white text-primary border-2 border-white">
+                <i class="fas fa-weixin mr-2"></i> 微信咨询
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 轮播图2 -->
+      <div class="swiper-slide" style="background-image: url('banner/banner2.jpg');">
+        <div class="container mx-auto h-[60vh] min-h-[400px] flex items-center">
+          <div class="absolute inset-0 bg-black/40 z-10"></div>
+          <div class="container mx-auto px-4 z-20">
+            <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-4 text-white">艺术铁艺护栏</h1>
+            <p class="text-lg md:text-xl mb-8 text-white">手工锻造工艺，定制化艺术造型，为高档住宅增添优雅气质</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="tel:15835870592" class="contact-btn">
+                <i class="fas fa-phone-alt mr-2"></i> 立即咨询
+              </a>
+              <a href="#contact" class="contact-btn bg-white text-primary border-2 border-white">
+                <i class="fas fa-weixin mr-2"></i> 微信咨询
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 轮播图3 -->
+      <div class="swiper-slide" style="background-image: url('banner/banner3.jpg');">
+        <div class="container mx-auto h-[60vh] min-h-[400px] flex items-center">
+          <div class="absolute inset-0 bg-black/40 z-10"></div>
+          <div class="container mx-auto px-4 z-20">
+            <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-4 text-white">草坪PVC护栏</h1>
+            <p class="text-lg md:text-xl mb-8 text-white">环保材质色彩丰富，免维护设计，适合花园、学校、公园场景</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="tel:15835870592" class="contact-btn">
+                <i class="fas fa-phone-alt mr-2"></i> 立即咨询
+              </a>
+              <a href="#contact" class="contact-btn bg-white text-primary border-2 border-white">
+                <i class="fas fa-weixin mr-2"></i> 微信咨询
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 轮播图4 -->
+      <div class="swiper-slide" style="background-image: url('banner/banner4.jpg');">
+        <div class="container mx-auto h-[60vh] min-h-[400px] flex items-center">
+          <div class="absolute inset-0 bg-black/40 z-10"></div>
+          <div class="container mx-auto px-4 z-20">
+            <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-4 text-white">市政工程护栏</h1>
+            <p class="text-lg md:text-xl mb-8 text-white">符合国家标准，高强度钢材制造，用于道路隔离、桥梁防护</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="tel:15835870592" class="contact-btn">
+                <i class="fas fa-phone-alt mr-2"></i> 立即咨询
+              </a>
+              <a href="#contact" class="contact-btn bg-white text-primary border-2 border-white">
+                <i class="fas fa-weixin mr-2"></i> 微信咨询
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 轮播图5 -->
+      <div class="swiper-slide" style="background-image: url('banner/banner5.jpg');">
+        <div class="container mx-auto h-[60vh] min-h-[400px] flex items-center">
+          <div class="absolute inset-0 bg-black/40 z-10"></div>
+          <div class="container mx-auto px-4 z-20">
+            <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-4 text-white">公路安全护栏</h1>
+            <p class="text-lg md:text-xl mb-8 text-white">波形梁设计有效吸收撞击能量，保障公路行车安全</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="tel:15835870592" class="contact-btn">
+                <i class="fas fa-phone-alt mr-2"></i> 立即咨询
+              </a>
+              <a href="#contact" class="contact-btn bg-white text-primary border-2 border-white">
+                <i class="fas fa-weixin mr-2"></i> 微信咨询
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 轮播图6 -->
+      <div class="swiper-slide" style="background-image: url('banner/banner6.jpg');">
+        <div class="container mx-auto h-[60vh] min-h-[400px] flex items-center">
+          <div class="absolute inset-0 bg-black/40 z-10"></div>
+          <div class="container mx-auto px-4 z-20">
+            <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-4 text-white">施工围挡护栏</h1>
+            <p class="text-lg md:text-xl mb-8 text-white">建筑工地专用防护，可重复使用，安装便捷保障施工安全</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="tel:15835870592" class="contact-btn">
+                <i class="fas fa-phone-alt mr-2"></i> 立即咨询
+              </a>
+              <a href="#contact" class="contact-btn bg-white text-primary border-2 border-white">
+                <i class="fas fa-weixin mr-2"></i> 微信咨询
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 轮播图7 -->
+      <div class="swiper-slide" style="background-image: url('banner/banner7.jpg');">
+        <div class="container mx-auto h-[60vh] min-h-[400px] flex items-center">
+          <div class="absolute inset-0 bg-black/40 z-10"></div>
+          <div class="container mx-auto px-4 z-20">
+            <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-4 text-white">定制护栏解决方案</h1>
+            <p class="text-lg md:text-xl mb-8 text-white">根据项目需求提供个性化设计，从生产到安装一站式服务</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="tel:15835870592" class="contact-btn">
+                <i class="fas fa-phone-alt mr-2"></i> 立即咨询
+              </a>
+              <a href="#contact" class="contact-btn bg-white text-primary border-2 border-white">
+                <i class="fas fa-weixin mr-2"></i> 微信咨询
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 轮播图控制按钮 -->
+    <div class="swiper-button-next text-white"></div>
+    <div class="swiper-button-prev text-white"></div>
+    <!-- 轮播图指示器 -->
+    <div class="swiper-pagination text-white"></div>
+  </div>
+</section>
+
+<!-- 产品中心 -->
+<section id="products" class="section-padding bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">护栏产品中心</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">我们提供多种类型的护栏产品，满足不同场景的安全防护需求，点击查看详情</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- 产品卡片1 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+        <img src="xingang.jpg" alt="锌钢护栏" class="w-full h-60 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">锌钢护栏</h3>
+          <p class="text-gray-600 mb-4">采用锌钢合金材质，耐腐蚀、强度高，适用于小区、别墅、公园等场景。</p>
+          <a href="tel:15835870592" class="inline-block text-primary font-semibold hover:underline">
+            咨询价格 <i class="fas fa-arrow-right ml-1"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 产品卡片2 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+        <img src="tieyi.jpg" alt="铁艺护栏" class="w-full h-60 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">铁艺护栏</h3>
+          <p class="text-gray-600 mb-4">精美铁艺工艺，造型多样，兼具美观与防护功能，适合高档住宅与商业场所。</p>
+          <a href="tel:15835870592" class="inline-block text-primary font-semibold hover:underline">
+            咨询价格 <i class="fas fa-arrow-right ml-1"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 产品卡片3 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+        <img src="caoping.jpg" alt="草坪护栏" class="w-full h-60 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">草坪护栏</h3>
+          <p class="text-gray-600 mb-4">环保PVC材质，色彩丰富，免维护，适合花园、庭院、学校等场景使用。</p>
+          <a href="tel:15835870592" class="inline-block text-primary font-semibold hover:underline">
+            咨询价格 <i class="fas fa-arrow-right ml-1"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 产品卡片4 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+        <img src="chengshihulan.jpg" alt="市政护栏" class="w-full h-60 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">市政护栏</h3>
+          <p class="text-gray-600 mb-4">高强度钢材制造，符合市政工程标准，用于道路隔离、桥梁防护等公共设施。</p>
+          <a href="tel:15835870592" class="inline-block text-primary font-semibold hover:underline">
+            咨询价格 <i class="fas fa-arrow-right ml-1"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 产品卡片5 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+        <img src="gonglu.jpg" alt="公路护栏" class="w-full h-60 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">公路护栏</h3>
+          <p class="text-gray-600 mb-4">波形梁护栏设计，有效吸收撞击能量，保障公路行车安全，符合国家标准。</p>
+          <a href="tel:15835870592" class="inline-block text-primary font-semibold hover:underline">
+            咨询价格 <i class="fas fa-arrow-right ml-1"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 产品卡片6 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+        <img src="weidang.jpg" alt="工地围挡" class="w-full h-60 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">施工围挡</h3>
+          <p class="text-gray-600 mb-4">建筑工地专用护栏，保障基坑周边安全，可重复使用，安装便捷。</p>
+          <a href="tel:15835870592" class="inline-block text-primary font-semibold hover:underline">
+            咨询价格 <i class="fas fa-arrow-right ml-1"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <a href="tel:15835870592" class="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold py-3 px-8 rounded-full transition">
+        查看更多产品
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 关于我们 -->
+<section id="about" class="section-padding bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">关于我们</h2>
+        <p class="text-gray-600 mb-6 text-lg">我们是专业的护栏产品供应商，拥有丰富行业经验，致力于为客户提供高品质的护栏产品和专业的解决方案。</p>
+        <p class="text-gray-600 mb-8 text-lg">从产品设计、生产到安装维护，我们拥有完整的产业链服务能力，已为众多项目提供护栏解决方案，赢得了客户的广泛认可。</p>
+
+        <div class="grid grid-cols-2 gap-6 mb-8">
+          <div class="text-center">
+            <div class="text-4xl font-bold text-primary mb-2">1000+</div>
+            <div class="text-gray-600">服务项目</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-primary mb-2">50+</div>
+            <div class="text-gray-600">产品类型</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-primary mb-2">98%</div>
+            <div class="text-gray-600">客户满意度</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-primary mb-2">10年+</div>
+            <div class="text-gray-600">行业经验</div>
+          </div>
+        </div>
+
+        <a href="tel:15835870592" class="contact-btn">
+          <i class="fas fa-phone-alt mr-2"></i> 立即咨询专业方案
+        </a>
+      </div>
+
+      <!-- 生产车间视频区域 -->
+      <div>
+        <h3 class="text-2xl font-bold mb-6 text-center">生产车间实拍</h3>
+        <div class="video-container mb-6">
+          <video id="workshop-video" controls poster="chejian-thumbnail.jpg">
+            <source src="chejian.mp4" type="video/mp4">
+            您的浏览器不支持视频播放
+          </video>
+          <div class="play-button" id="play-button">
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+        <p class="text-gray-600 text-center">点击播放查看我们的生产流程，从原材料到成品的全工艺展示</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 联系咨询 -->
+<section id="contact" class="section-padding bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">联系我们咨询</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">如果您对我们的护栏产品感兴趣，或有任何咨询需求，欢迎通过以下方式联系我们</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div class="bg-primary text-white p-8 rounded-lg shadow-md">
+        <h3 class="text-2xl font-bold mb-6">联系方式</h3>
+        <div class="space-y-6">
+          <div class="flex items-start">
+            <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-xl">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="ml-4">
+              <h4 class="font-bold mb-1 text-lg">电话咨询</h4>
+              <a href="tel:15835870592" class="text-xl font-bold hover:text-accent transition">15835870592</a>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-xl">
+              <i class="fas fa-weixin"></i>
+            </div>
+            <div class="ml-4">
+              <h4 class="font-bold mb-1 text-lg">微信咨询</h4>
+              <p class="text-lg">扫描下方二维码添加微信</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-xl">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="ml-4">
+              <h4 class="font-bold mb-1 text-lg">公司地址</h4>
+              <p class="text-lg">新疆乌鲁木齐米东区</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gray-50 p-8 rounded-lg shadow-md text-center">
+        <h3 class="text-2xl font-bold mb-6">微信咨询二维码</h3>
+        <div class="bg-white p-4 inline-block rounded-lg shadow-md">
+          <img src="wechat-qrcode.jpg" alt="微信咨询二维码" class="w-64 h-64 object-cover">
+        </div>
+        <p class="mt-4 text-gray-600 text-lg">扫描二维码添加微信，获取专业咨询服务</p>
+
+        <div class="mt-8 flex flex-col gap-4">
+          <a href="tel:15835870592" class="contact-btn">
+            <i class="fas fa-phone-alt mr-2"></i> 立即拨打电话
+          </a>
+          <a href="weixin://" class="contact-btn bg-green-600 hover:bg-green-700">
+            <i class="fas fa-comment mr-2"></i> 打开微信咨询
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="bg-gray-900 text-white py-12">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div>
+        <h3 class="text-xl font-bold mb-4">昆仑铁艺护栏</h3>
+        <p class="text-gray-400">专业的护栏产品咨询与解决方案提供商，为您提供高品质的护栏产品和贴心的服务。</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-4">快速链接</h3>
+        <ul class="space-y-2">
+          <li><a href="#products" class="text-gray-400 hover:text-white transition">产品中心</a></li>
+          <li><a href="#about" class="text-gray-400 hover:text-white transition">关于我们</a></li>
+          <li><a href="#contact" class="text-gray-400 hover:text-white transition">联系咨询</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-4">产品分类</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-gray-400 hover:text-white transition">锌钢护栏</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">铁艺护栏</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">PVC护栏</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">市政护栏</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-4">联系我们</h3>
+        <ul class="space-y-2 text-gray-400">
+          <li class="flex items-center"><i class="fas fa-phone-alt mr-2"></i> 15835870592</li>
+          <li class="flex items-center"><i class="fas fa-map-marker-alt mr-2"></i> 新疆乌鲁木齐米东区</li>
+          <li class="flex items-center"><i class="fas fa-weixin mr-2"></i> 微信咨询二维码见上方</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+      <p>© 2025 昆仑铁艺护栏 版权所有 | 备案号：XXX-XXXXXXX</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // 移动端菜单切换
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+  });
+
+  // 导航栏滚动效果
+  window.addEventListener('scroll', function() {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 100) {
+      nav.classList.add('py-2');
+      nav.classList.add('shadow-lg');
+    } else {
+      nav.classList.remove('py-2');
+      nav.classList.remove('shadow-lg');
+    }
+  });
+
+  // 初始化轮播图
+  document.addEventListener('DOMContentLoaded', function() {
+    const swiper = new Swiper('.mySwiper', {
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        640: {
+          height: '50vh',
+        },
+        1024: {
+          height: '60vh',
+        }
+      }
+    });
+
+    // 视频播放按钮交互
+    const playButton = document.getElementById('play-button');
+    const video = document.getElementById('workshop-video');
+
+    if (playButton && video) {
+      playButton.addEventListener('click', function() {
+        video.play();
+        playButton.style.display = 'none';
+      });
+
+      video.addEventListener('play', function() {
+        if (playButton) playButton.style.display = 'none';
+      });
+    }
+  });
+</script>
+</body>
+</html>
